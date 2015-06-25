@@ -6,6 +6,8 @@
 <h3>Photos</h3>
 
 <% @photos.order('created_at DESC').each do |p| %>
-  <p><strong><%= p.title %></strong> | <%= p.author %></p>
-  <img src='<%= p.url %>' alt='<%= p.title %>'>
+  <div>
+    <p><strong><%= p.title %></strong> | <%= p.author %></p>
+    <%= link_to( image_tag(p.url), photo_path(p) ) %>
+  </div>
 <% end %>

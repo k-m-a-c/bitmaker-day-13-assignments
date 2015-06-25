@@ -1,4 +1,9 @@
 <p><strong><%= @photo.title %></strong> | <%= @photo.author %></p>
 <img src='<%= @photo.url %>' alt='<%= @photo.title %>'>
 
-<p><%= link_to 'Back', new_photo_path %></p>
+<p>
+  <%= button_to 'Edit Pic', edit_photo_path, :method => :get %>
+  <%= button_to 'Delete Pic', photo_path(@photo), method: :delete, data: { confirm: "Are you sure?" } %>
+</p>
+
+<p><%= link_to 'Back', welcome_index_path %></p>

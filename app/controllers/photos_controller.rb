@@ -13,6 +13,7 @@ class PhotosController < ApplicationController
   end
 
   def edit
+    @photo = Photo.find(params[:id])
   end
 
   def create
@@ -30,6 +31,10 @@ class PhotosController < ApplicationController
   end
 
   def destroy
+    @photo = Photo.find(params[:id])
+    @photo.destroy
+
+    redirect_to welcome_index_path
   end
 
   private
