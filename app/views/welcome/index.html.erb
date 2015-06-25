@@ -1,0 +1,11 @@
+<h1>whassup bitches??</h1>
+<h2>Check these pics out.</h2>
+
+<%= button_to 'Make a new pic', new_photo_path, :method => :get %>
+
+<h3>Photos</h3>
+
+<% @photos.order('created_at DESC').each do |p| %>
+  <p><strong><%= p.title %></strong> | <%= p.author %></p>
+  <img src='<%= p.url %>' alt='<%= p.title %>'>
+<% end %>
